@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task manager</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-    
+    <a href="index.html">index</a>
     <script src="app.js"></script>
 </body>
 </html>

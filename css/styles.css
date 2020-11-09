@@ -1,0 +1,12 @@
+#addTaskForm input[name=endingDate]{
+    display: inline-block;
+}
+
+div.addTask{
+    text-align: center;
+}
+
+div.addTask td{
+    text-align: center;
+    vertical-align: middle;
+}
