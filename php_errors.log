@@ -1,0 +1,16 @@
+[09-Nov-2020 19:24:11 UTC] PHP Warning:  require_once(./lib/PHPMailer/PHPPailer.php): failed to open stream: No such file or directory in C:\PROJECTS\YuriyTestTask1\server.php on line 10
+[09-Nov-2020 19:24:11 UTC] PHP Fatal error:  require_once(): Failed opening required './lib/PHPMailer/PHPPailer.php' (include_path='.;C:\php\pear') in C:\PROJECTS\YuriyTestTask1\server.php on line 10
+[09-Nov-2020 19:26:48 UTC] PHP Fatal error:  Uncaught Error: Class 'SMTP' not found in C:\PROJECTS\YuriyTestTask1\server.php:13
+Stack trace:
+#0 {main}
+  thrown in C:\PROJECTS\YuriyTestTask1\server.php on line 13
+[09-Nov-2020 19:27:06 UTC] PHP Warning:  Creating default object from empty value in C:\PROJECTS\YuriyTestTask1\server.php on line 14
+[09-Nov-2020 19:27:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::isSMTP() in C:\PROJECTS\YuriyTestTask1\server.php:15
+Stack trace:
+#0 {main}
+  thrown in C:\PROJECTS\YuriyTestTask1\server.php on line 15
+[09-Nov-2020 19:27:32 UTC] PHP Warning:  Creating default object from empty value in C:\PROJECTS\YuriyTestTask1\server.php on line 15
+[09-Nov-2020 19:27:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::isSMTP() in C:\PROJECTS\YuriyTestTask1\server.php:16
+Stack trace:
+#0 {main}
+  thrown in C:\PROJECTS\YuriyTestTask1\server.php on line 16
