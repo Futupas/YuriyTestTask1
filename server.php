@@ -31,7 +31,7 @@ try {
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
     // $mail->addBCC('bcc@example.com');
-    $mail->setFrom('', 'Mailer');
+    $mail->setFrom(getenv('mail_login'), 'Mailer');
     $mail->addAddress('futupas@gmail.com', 'Joe User');     // Add a recipient
 
     // Attachments
