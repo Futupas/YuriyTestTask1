@@ -4,9 +4,13 @@
 
 div.addTask{
     text-align: center;
+    overflow: auto;
 }
 
 div.addTask td{
     text-align: center;
     vertical-align: middle;
+}
+#addTaskForm td{
+    padding: 2px;
 }
