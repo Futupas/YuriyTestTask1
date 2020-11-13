@@ -19,3 +19,8 @@ Stack trace:
 #0 C:\PROJECTS\YuriyTestTask1\server.php(5): DateTime->__construct('31.0h.2002', Object(DateTimeZone))
 #1 {main}
   thrown in C:\PROJECTS\YuriyTestTask1\server.php on line 5
+[13-Nov-2020 08:13:18 UTC] PHP Fatal error:  Uncaught Error: Object of class DateTime could not be converted to string in C:\PROJECTS\YuriyTestTask1\add_task.php:60
+Stack trace:
+#0 {main}
+  thrown in C:\PROJECTS\YuriyTestTask1\add_task.php on line 60
+[13-Nov-2020 08:13:50 UTC] PHP Notice:  Undefined variable: description in C:\PROJECTS\YuriyTestTask1\add_task.php on line 60

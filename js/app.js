@@ -9,7 +9,7 @@ window.onload = (e) => {
     document.getElementById('addTaskForm').onsubmit = async (e) => {
         e.preventDefault();
     
-        let response = await fetch('/server.php', {
+        let response = await fetch('/add_task.php', {
             method: 'POST',
             body: new FormData(document.getElementById('addTaskForm'))
         });
@@ -43,7 +43,7 @@ function setTodayDateToInput() {
 }
 
 function applyEmailMask() {
-    Inputmask({'mask': '*{3,20}@*{3,20}.*{2,7}', }).mask(document.querySelector('#addTaskForm input[name=email]'));
+    Inputmask({'mask': '*{3,20}@*{1,20}.*{2,7}', }).mask(document.querySelector('#addTaskForm input[name=email]'));
 }
 
 

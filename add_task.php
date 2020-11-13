@@ -44,11 +44,19 @@ if ($_POST['taskDescription'] == '' || is_null($_POST['taskDescription'])) {
     echo json_encode((object)(array('ok' => false, 'message' => 'Task description mustn\' be empty')));
     die();
 }
-if (strlen($_POST['taskName'] > 1000)) {
+if (strlen($_POST['taskDescription'] > 1000)) {
     echo json_encode((object)(array('ok' => false, 'message' => 'Task description mustn\' be bigger than 1000 chars')));
     die();
 }
 
 // /validation
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+// $date_unix;
+$task_name = $_POST['taskName'];
+$task_description = $_POST['taskDescription'];
+
+echo json_encode((object)(array('ok' => true, 'message' => "name: $name, email: $email, date: $date_unix, taskName: $task_name, description: $task_description")));
 
 ?>
