@@ -1,3 +1,7 @@
+*{
+    font-family: Helvetica, sans-serif;
+}
+
 #addTaskForm input[name=endingDate]{
     display: inline-block;
 }
@@ -5,6 +9,10 @@
 div.addTask{
     text-align: center;
     overflow: auto;
+    margin-bottom: 100px;
+}
+div.tasksTable {
+    padding: 10px;
 }
 
 div.addTask td{
@@ -14,3 +22,27 @@ div.addTask td{
 #addTaskForm td{
     padding: 2px;
 }
+button.deleteTask{
+    padding: 3px 10px;
+    border: 0px;
+    background-color: #ffb3b3;
+    color: black;
+    border-radius: 5px;
+}
+button.deleteTask:active,
+button.deleteTask:hover,
+button.deleteTask:focus{
+    background-color: #ff9999;
+}
+#mainTable thead td {
+    font-weight: 600;
+}
+#mainTable, #mainTable td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#mainTable td {
+    padding: 2px;
+    text-align: center;
+}
+

@@ -64,7 +64,36 @@
         </form>
     </div>
     <div class="tasksTable col-md-8">
-
+        <div style="margin-bottom: 10px;">
+            Сортировка по
+            <select name="" id="sortingSelect">
+                <option value="creationIncrease" selected>дате создания, по возрастанию</option>
+                <option value="creationDecrease">дате создания, по убыванию</option>
+                <option value="doneIncrease">дате окончания, по возрастанию</option>
+                <option value="doneDecrease">дате окончания, по убываниею</option>
+            </select>
+            <br />
+            Поиск по 
+            <select name="" id="searchingSelect">
+                <option value="name" selected>ФИО</option>
+                <option value="taskName">названию задачи</option>
+            </select>
+            :
+            <input type="text" size="20" id="searchInput" />
+        </div>
+        <table id="mainTable">
+            <thead>
+                <tr>
+                    <td>ФИО</td>
+                    <td>Название задачи</td>
+                    <td>Дата добавления</td>
+                    <td>Дата завершения</td>
+                    <td>Описание</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </div>
 
     <script src="lib/dtsel/dtsel.js"></script>

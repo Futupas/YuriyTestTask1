@@ -10,8 +10,16 @@ if ($_POST['name'] == '' || is_null($_POST['name'])) {
     echo json_encode((object)(array('ok' => false, 'message' => 'Name mustn\' be empty')));
     die();
 }
+if (strlen($_POST['name'] > 128)) {
+    echo json_encode((object)(array('ok' => false, 'message' => 'Name is to big')));
+    die();
+}
 if ($_POST['email'] == '' || is_null($_POST['email'])) {
     echo json_encode((object)(array('ok' => false, 'message' => 'Email mustn\' be empty')));
+    die();
+}
+if (strlen($_POST['email'] > 128)) {
+    echo json_encode((object)(array('ok' => false, 'message' => 'Email is to big')));
     die();
 }
 $email_splitted = explode('@', $_POST['email']);
