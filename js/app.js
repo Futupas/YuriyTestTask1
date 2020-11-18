@@ -142,9 +142,25 @@ function fillTasksTable(tasks) {
         let deleteBtn = document.createElement('button');
         deleteBtn.innerText = 'Удалить';
         deleteBtn.classList.add('btn', 'btn-danger');
-        deleteBtn.onclick = (e) => {
-            console.log(this);
-            console.log(e);
+        deleteBtn.onclick = async (e) => {
+            let taskId = e.target.parentElement.parentElement.task.id;
+            let formData = new FormData();
+            formData.append('id', taskId);
+
+            // console.log(e.target.parentElement.parentElement.task);
+            let response = await fetch('/delete_task.php', {
+                method: 'POST',
+                body: formData
+            });
+        
+            let result = await response.json();
+        
+            if (result.ok === true) {
+                globalTasks = globalTasks.filter(e => e.id !== taskId);
+                e.target.parentElement.parentElement.remove();
+            } else {
+                alert ('Ошибка удаления задачи');
+            }
         }
         deleteTd.appendChild(deleteBtn);
         tr.appendChild(deleteTd);
