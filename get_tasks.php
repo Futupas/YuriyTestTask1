@@ -12,12 +12,12 @@ $dbconn = pg_connect(
 dbname=$db_name 
 user=$db_user 
 password=$db_pass 
-port=$db_port");
-        // or die('Не удалось соединиться: ' . pg_last_error());
+port=$db_port")
+        or die('Не удалось соединиться: ' . pg_last_error());
 
     
-$result = pg_query("SELECT * FROM \"tasks\"");
-// or die('Ошибка запроса: ' . pg_last_error());
+$result = pg_query("SELECT * FROM \"tasks\"")
+or die('Ошибка запроса: ' . pg_last_error());
 
 $num_rows = pg_num_rows($result);
 $affected_rows = pg_affected_rows($result);
@@ -34,7 +34,7 @@ echo json_encode((object)array(
 
 
 
-die(0);
+exit(0);
 
 
 $tasks = array();
