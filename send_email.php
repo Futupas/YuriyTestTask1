@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-print_r(send_email('futupas@gmail.com', 'Alex Pascal', 'Mail test', false, 'Hello world'));
+// print_r(send_email('futupas@gmail.com', 'Alex Pascal', 'Mail test', false, 'Hello world'));
 
 /**
  * send email

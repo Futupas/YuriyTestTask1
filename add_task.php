@@ -96,6 +96,11 @@ pg_free_result($result);
 pg_close($dbconn);
 
 
+require_once('send_email.php');
+
+// $from_name, $subject, $is_html, $body, $alt_body = NULL) {
+send_email($email, 'Task Manager', 'Новая задача!', true, "$name, у вас новая задача!<br /><b>$$task_name</b><br />$task_description");
+
 echo json_encode((object)array(
     'ok' => true,
     'added_task' => $fetch_row
