@@ -91,7 +91,7 @@ function applyEmailMask() {
 async function getTasks() {
     let response = await fetch('/get_tasks.php');
     let result = await response.json();
-    globalTasks = result;
+    globalTasks = result.tasks;
     globalTasks.sort((a, b) => { return a.adding_unix_date - b.adding_unix_date; });
     fillTasksTable();
 }
