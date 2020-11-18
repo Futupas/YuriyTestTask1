@@ -84,11 +84,9 @@ dbname=$db_name
 user=$db_user 
 password=$db_pass 
 port=$db_port");
-        // or die('Не удалось соединиться: ' . pg_last_error());
 
     
 $result = pg_query("INSERT INTO \"tasks\" (\"name\", \"email\", \"ending_unix_date\", \"task_name\", \"task_description\") VALUES ('$name', '$email', $date_unix, '$task_name', '$task_description') RETURNING *");
-// or die('Ошибка запроса: ' . pg_last_error());
 
 $num_rows = pg_num_rows($result);
 $affected_rows = pg_affected_rows($result);
@@ -104,7 +102,5 @@ echo json_encode((object)array(
 ));
 
 
-
-// echo json_encode((object)(array('ok' => true, 'message' => "name: $name, email: $email, date: $date_unix, taskName: $task_name, description: $task_description")));
 
 ?>
