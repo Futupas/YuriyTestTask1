@@ -100,7 +100,7 @@ pg_close($dbconn);
 
 echo json_encode((object)array(
     'ok' => true,
-    'added_value' => $fetch_row
+    'added_task' => $fetch_row
 ));
 
 
