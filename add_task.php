@@ -92,7 +92,7 @@ $result = pg_query("INSERT INTO \"tasks\" (\"name\", \"email\", \"ending_unix_da
 
 $num_rows = pg_num_rows($result);
 $affected_rows = pg_affected_rows($result);
-$fetch_all = pg_fetch_all($result);
+$fetch_row = pg_fetch_row($result);
 
 pg_free_result($result);
 pg_close($dbconn);
@@ -100,15 +100,7 @@ pg_close($dbconn);
 
 echo json_encode((object)array(
     'ok' => true,
-    'added_value' => (object)array(
-        'id' => $fetch_all[0]->id,
-        'name' => $fetch_all[0]->name,
-        'email' => $fetch_all[0]->email,
-        'adding_unix_date' => $fetch_all[0]->adding_unix_date,
-        'ending_unix_date' => $fetch_all[0]->ending_unix_date,
-        'task_name' => $fetch_all[0]->task_name,
-        'task_description' => $fetch_all[0]->task_description
-    )
+    'added_value' => $fetch_row
 ));
 
 

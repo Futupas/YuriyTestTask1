@@ -24,3 +24,5 @@ Stack trace:
 #0 {main}
   thrown in C:\PROJECTS\YuriyTestTask1\add_task.php on line 60
 [13-Nov-2020 08:13:50 UTC] PHP Notice:  Undefined variable: description in C:\PROJECTS\YuriyTestTask1\add_task.php on line 60
+[18-Nov-2020 12:58:38 UTC] PHP Warning:  pg_connect(): Unable to connect to PostgreSQL server: could not translate host name &quot;dbname=&quot; to address: Unknown host in C:\PROJECTS\YuriyTestTask1\get_tasks.php on line 15
+[18-Nov-2020 12:58:38 UTC] PHP Warning:  pg_last_error(): No PostgreSQL link opened yet in C:\PROJECTS\YuriyTestTask1\get_tasks.php on line 16

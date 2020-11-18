@@ -20,47 +20,61 @@ window.onload = (e) => {
             body: new FormData(document.getElementById('addTaskForm'))
         });
     
-        let result = await response.text();
+        let result = await response.json();
     
-        alert(result);
+        if (result.ok === true && typeof(result.tasks) === 'object') {
+            globalTasks.push(result.tasks);
+            sortTasks();
+            searchTasks();
+        } else {
+            alert ('Ошибка добавления задачи');
+        }
     };
 
     document.getElementById('sortingSelect').oninput = (e) => {
-        let sortingValue = document.getElementById('sortingSelect').value;
-        sorting = sortingValue;
-        if (sorting === 'creationIncrease') {
-            globalTasks.sort((a, b) => { return a.adding_unix_date - b.adding_unix_date; });
-            fillTasksTable();
-        } else if (sorting === 'creationDecrease') {
-            globalTasks.sort((a, b) => { return b.adding_unix_date - a.adding_unix_date; });
-            fillTasksTable();
-        } else if (sorting === 'doneIncrease') {
-            globalTasks.sort((a, b) => { return a.ending_unix_date - b.ending_unix_date; });
-            fillTasksTable();
-        } else if (sorting === 'doneDecrease') {
-            globalTasks.sort((a, b) => { return b.ending_unix_date - a.ending_unix_date; });
-            fillTasksTable();
-        } 
+        sortTasks();
     }
     document.getElementById('searchInput').oninput = (e) => {
-        let searchText = document.getElementById('searchInput').value;
-        if (searchText === '') {
-            fillTasksTable();
-            return true;
-        }
-        let searchingType = document.getElementById('searchingSelect').value;
-        if (searchingType === 'name') {
-            fillTasksTable(globalTasks.filter((e) => {
-                return e.name.toLowerCase().includes(searchText.toLowerCase());
-            }));
-        }
-        else if (searchingType === 'taskName') {
-            fillTasksTable(globalTasks.filter((e) => {
-                return e.task_name.toLowerCase().includes(searchText.toLowerCase());
-            }));
-        }
+        searchTasks();
     }
 }
+
+function sortTasks() {
+    let sortingValue = document.getElementById('sortingSelect').value;
+    sorting = sortingValue;
+    if (sorting === 'creationIncrease') {
+        globalTasks.sort((a, b) => { return a.adding_unix_date - b.adding_unix_date; });
+        fillTasksTable();
+    } else if (sorting === 'creationDecrease') {
+        globalTasks.sort((a, b) => { return b.adding_unix_date - a.adding_unix_date; });
+        fillTasksTable();
+    } else if (sorting === 'doneIncrease') {
+        globalTasks.sort((a, b) => { return a.ending_unix_date - b.ending_unix_date; });
+        fillTasksTable();
+    } else if (sorting === 'doneDecrease') {
+        globalTasks.sort((a, b) => { return b.ending_unix_date - a.ending_unix_date; });
+        fillTasksTable();
+    } 
+}
+function searchTasks() {
+    let searchText = document.getElementById('searchInput').value;
+    if (searchText === '') {
+        fillTasksTable();
+        return true;
+    }
+    let searchingType = document.getElementById('searchingSelect').value;
+    if (searchingType === 'name') {
+        fillTasksTable(globalTasks.filter((e) => {
+            return e.name.toLowerCase().includes(searchText.toLowerCase());
+        }));
+    }
+    else if (searchingType === 'taskName') {
+        fillTasksTable(globalTasks.filter((e) => {
+            return e.task_name.toLowerCase().includes(searchText.toLowerCase());
+        }));
+    }
+}
+
 
 function setTodayDateToInput() {
     let today = new Date();
