@@ -26,6 +26,11 @@ window.onload = (e) => {
             globalTasks.push(result.added_task);
             sortTasks();
             searchTasks();
+            document.querySelector('#addTaskForm input[name="name"]').value = '';
+            document.querySelector('#addTaskForm input[name="email"]').value = '';
+            document.querySelector('#addTaskForm input[name="endingDate"]').value = '';
+            document.querySelector('#addTaskForm input[name="taskName"]').value = '';
+            document.querySelector('#addTaskForm textarea[name="taskDescription"]').value = '';
         } else {
             alert ('Ошибка добавления задачи');
         }
