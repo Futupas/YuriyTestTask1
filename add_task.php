@@ -92,7 +92,7 @@ $result = pg_query("INSERT INTO \"tasks\" (\"name\", \"email\", \"ending_unix_da
 
 $num_rows = pg_num_rows($result);
 $affected_rows = pg_affected_rows($result);
-$fetch_row = pg_fetch_row($result);
+$fetch_row = pg_fetch_object($result);
 
 pg_free_result($result);
 pg_close($dbconn);
