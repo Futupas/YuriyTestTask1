@@ -22,7 +22,7 @@ window.onload = (e) => {
     
         let result = await response.json();
     
-        if (result.ok === true && typeof(result.tasks) === 'object') {
+        if (result.ok === true && typeof(result.added_task) === 'object') {
             globalTasks.push(result.added_task);
             sortTasks();
             searchTasks();
