@@ -159,6 +159,11 @@ function fillTasksTable(tasks) {
                 globalTasks = globalTasks.filter(e => e.id !== taskId);
                 e.target.parentElement.parentElement.remove();
             } else {
+                (async () => {
+                    await getTasks();
+                    sortTasks();
+                    searchTasks();
+                })();
                 alert ('Ошибка удаления задачи');
             }
         }
