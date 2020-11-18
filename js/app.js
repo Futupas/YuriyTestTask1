@@ -122,7 +122,7 @@ function fillTasksTable(tasks) {
         let deleteTd = document.createElement('td');
         let deleteBtn = document.createElement('button');
         deleteBtn.innerText = 'Удалить';
-        deleteBtn.classList.add('deleteTask');
+        deleteBtn.classList.add('btn', 'btn-danger');
         deleteTd.appendChild(deleteBtn);
         tr.appendChild(deleteTd);
         tbody.appendChild(tr);

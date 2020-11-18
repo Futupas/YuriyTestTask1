@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="addTask col-md-4">
-        <form id="addTaskForm">
+        <form id="addTaskForm" class="form-group">
             <table>
                 <tr>
                     <td colspan="2" style="text-align: center;">
@@ -22,7 +22,7 @@
                         ФИО:
                     </td>
                     <td>
-                        <input required type="text" name="name" value="" placeholder="Роман Паркур" />
+                        <input required type="text" name="name" value="" placeholder="Роман Паркур" class="form-control" />
                     </td>
                 </tr>
                 <tr>
@@ -30,7 +30,7 @@
                         E-Mail:
                     </td>
                     <td>
-                        <input required type="text" name="email" value="" placeholder="roman@park.ur">
+                        <input required type="text" name="email" value="" placeholder="roman@park.ur" class="form-control" />
                     </td>
                 </tr>
                 <tr>
@@ -38,7 +38,7 @@
                         Дата завершения:
                     </td>
                     <td>
-                        <input required type="text" name="endingDate" />
+                        <input required type="text" name="endingDate" class="form-control" autocomplete="no" />
                     </td>
                 </tr>
                 <tr>
@@ -46,7 +46,7 @@
                         Название задачи
                     </td>
                     <td>
-                        <input required type="text" name="taskName" />
+                        <input required type="text" name="taskName" class="form-control" />
                     </td>
                 </tr>
                 <tr>
@@ -54,19 +54,19 @@
                         Описание задачи
                     </td>
                     <td>
-                        <textarea name="taskDescription" required cols="30" rows="6" maxlength="1000"></textarea>
+                        <textarea name="taskDescription" required cols="30" rows="6" maxlength="1000" class="form-control"></textarea>
                     </td>
                 </tr>
             </table>
             
             
-            <input type="submit" />
+            <input type="submit" class="btn btn-default" value="Добавить" />
         </form>
     </div>
     <div class="tasksTable col-md-8">
         <div style="margin-bottom: 10px;">
             Сортировка по
-            <select name="" id="sortingSelect">
+            <select name="" id="sortingSelect" class="form-control" style="display: inline-block; width: auto;">
                 <option value="creationIncrease" selected>дате создания, по возрастанию</option>
                 <option value="creationDecrease">дате создания, по убыванию</option>
                 <option value="doneIncrease">дате окончания, по возрастанию</option>
@@ -74,15 +74,15 @@
             </select>
             <br />
             Поиск по 
-            <select name="" id="searchingSelect">
+            <select name="" id="searchingSelect" class="form-control" style="display: inline-block; width: auto;">
                 <option value="name" selected>ФИО</option>
                 <option value="taskName">названию задачи</option>
             </select>
             :
-            <input type="text" size="20" id="searchInput" />
+            <input type="text" size="20" id="searchInput" class="form-control" style="display: inline-block; width: auto;" />
         </div>
-        <table id="mainTable">
-            <thead>
+        <table id="mainTable" class="table table-striped table-hover">
+            <thead style="font-weight: bold;">
                 <tr>
                     <td>ФИО</td>
                     <td>Название задачи</td>

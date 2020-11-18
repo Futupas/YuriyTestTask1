@@ -22,7 +22,7 @@ div.addTask td{
 #addTaskForm td{
     padding: 2px;
 }
-button.deleteTask{
+/* button.deleteTask{
     padding: 3px 10px;
     border: 0px;
     background-color: #ffb3b3;
@@ -33,8 +33,8 @@ button.deleteTask:active,
 button.deleteTask:hover,
 button.deleteTask:focus{
     background-color: #ff9999;
-}
-#mainTable thead td {
+} */
+/* #mainTable thead td {
     font-weight: 600;
 }
 #mainTable, #mainTable td {
@@ -44,5 +44,5 @@ button.deleteTask:focus{
 #mainTable td {
     padding: 2px;
     text-align: center;
-}
+} */
 
