@@ -28,6 +28,8 @@ function send_email($to, $from_name, $subject, $is_html, $body, $alt_body = NULL
     try {
         // $mail->SMTPDebug = SMTP::DEBUG_SERVER; // Enable verbose debug output
         $mail->isSMTP();
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'base64';
         $mail->Host       = getenv('mail_server');
         $mail->SMTPAuth   = true;
         $mail->Username   = getenv('mail_login');
