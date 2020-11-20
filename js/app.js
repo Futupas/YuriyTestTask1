@@ -143,6 +143,8 @@ function fillTasksTable(tasks) {
         deleteBtn.innerText = 'Удалить';
         deleteBtn.classList.add('btn', 'btn-danger');
         deleteBtn.onclick = async (e) => {
+            let taskName = e.target.parentElement.parentElement.task.task_name;
+            if (!confirm(`Вы действительно хотите удалить задачу "${taskName}"?`)) return true;
             let taskId = e.target.parentElement.parentElement.task.id;
             let formData = new FormData();
             formData.append('id', taskId);
