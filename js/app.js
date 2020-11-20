@@ -7,6 +7,9 @@ let globalTasks = [];
 let sorting = 'creationIncrease';
 
 window.onload = (e) => {
+    globalTasks = [];
+    sorting = 'creationIncrease';
+
     setTodayDateToInput();
     applyEmailMask();    
     getTasks();
